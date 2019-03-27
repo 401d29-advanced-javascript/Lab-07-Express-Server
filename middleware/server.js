@@ -9,8 +9,8 @@ const PORT = process.env.PORT || 8080;
 const errorHandler = require('./error-500.js');
 const notFoundHandler = require('./error-404.js');
 
+// app.use('*', notFoundHandler);  //Haven't worked out catch error yet
 app.use(errorHandler);
-// app.use('*', notFoundHandler);
 
 let dateAndTime = (request, response, next) => {
   let date = new Date().toLocaleString();
